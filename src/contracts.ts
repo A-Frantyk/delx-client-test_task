@@ -16,7 +16,13 @@ export type ParcelDeliveryAddress = {
     deliveryDate: Date;
 }
 
+export type Carrier = {
+    name: string;
+    phoneNumber: string;
+}
+
 export type Parcel = {
     details: ParcelDetails;
     deliveryAddress: ParcelDeliveryAddress;
+    carrier: Carrier;
 }
