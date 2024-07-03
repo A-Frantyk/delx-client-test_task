@@ -26,3 +26,5 @@ export type Parcel = {
     deliveryAddress: ParcelDeliveryAddress;
     carrier: Carrier;
 }
+
+//просто перевірочка 03.07.2024 в 20.00//
