@@ -1,10 +1,20 @@
 :root {
-  /* Colors */
+  /* Colors Gray*/
   --primary-text: #101828;
   --secondary-text: #989898;
   --stroke: #E7E7E6;
   --background: #FAFAFA;
   --white: #FFFFFF;
+
+  /* Colors Main*/
+  --primary: #6377E2;
+  --secondary: #E7ECFA;
+
+  /* Colors Other*/
+  --blue-label: #6377E2;
+  --green-success: #5BAD77;
+  --yellow-warning: #E9BC7E;
+  --red-error: #E97E80;
 
   /* Fonts */
   --font-head-xl: bold 32px/40px 'Urbanist', sans-serif;
