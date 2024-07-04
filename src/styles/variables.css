@@ -1,0 +1,26 @@
+:root {
+  /* Colors */
+  --primary-text: #101828;
+  --secondary-text: #989898;
+  --stroke: #E7E7E6;
+  --background: #FAFAFA;
+  --white: #FFFFFF;
+
+  /* Fonts */
+  --font-head-xl: bold 32px/40px 'Urbanist', sans-serif;
+  --font-head-l: bold 16px/auto 'Urbanist', sans-serif;
+  --font-head-m: bold 14px/20px 'Urbanist', sans-serif;
+
+  --font-body-xl: bold 18px/auto 'Urbanist', sans-serif;
+  --font-body-l: 600 16px/auto 'Urbanist', sans-serif;
+  --font-body-m: normal 14px/20px 'Urbanist', sans-serif;
+  --font-body-s: normal 14px/20px 'Urbanist', sans-serif;
+
+  /* transition */
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* breakpoints */
+  --mobile: 320px;
+  --tablet: 768px;
+  --desktop: 1440px;
+}
