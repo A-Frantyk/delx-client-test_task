@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+}
+
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 1rem;
+  background-color: var(--secondary-cl);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.details {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.status {
+  width: fit-content;
+  padding: 0.25rem 1.5rem;
+
+  color: var(--white-cl);
+  font-weight: 600;
+
+  border-radius: 1rem;
+  background-color: var(--primary-cl);
+}
+
+.cost {
+  display: flex;
+  align-items: center;
+
+  color: var(--secondary-text-cl);
+  font-weight: 600;
+}
