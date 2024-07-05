@@ -1,27 +1,28 @@
 .container {
     display: flex;
     gap: 12px;
+    width: 100%;
 }
 
 .title {
     color: var(--primary-text);
-    font: var(--font-head-xl);
+    font: var(--font-body-xl);
 }
 
 .container_icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 84px;
-    height: 84px;
+    width: 60px;
+    height: 60px;
     background: var(--secondary);
     border-radius: 8px;
 }
 
 .icon{
     fill: var(--primary);
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
 }
 
 .container_text {
@@ -31,20 +32,22 @@
 }
 
 .button {
+    min-width: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--primary);
     color: var(--white);
+    font: var(--font-body-s);
     border-radius: 24px;
-    padding: 8px 16px;
+    padding: 4px;
 }
 
 .status {
     display: flex;
     justify-content: left;
     align-items: center;
-    gap: 16px
+    gap: 8px
 }
 
 .dot {
@@ -55,13 +58,20 @@
 }
 
 .icon_hryvnia {
+    width: 14px;
+    height: 14px;
     stroke: var(--secondary-text);
+    stroke-width: 2;
 }
 
 .price {
     display: flex;
     align-items: center;
-    /*gap: 4px;*/
     color: var(--secondary-text);
     font: var(--font-body-xl);
+}
+
+.count {
+    color: var(--secondary-text);
+    font: var(--font-body-m);
 }
