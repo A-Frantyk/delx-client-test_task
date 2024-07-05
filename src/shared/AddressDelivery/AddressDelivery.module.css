@@ -12,6 +12,25 @@
     background-color: var(--primary);
 }
 
+.line {
+    position: relative;
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+.line::after {
+    position: absolute;
+    left: 7px;
+    top: 16px;
+    content: "";
+    display: block;
+    width: 2px;
+    height: 52px;
+    background-color: var(--primary);
+}
+
 .container_address {
     width: 100%;
     display: flex;

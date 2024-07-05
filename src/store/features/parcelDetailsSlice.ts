@@ -12,7 +12,7 @@ export const parcelDetailsSlice = createSlice({
     name: 'parcelDetails',
     initialState,
     reducers: {
-        saveParcelDetails(state, {payload}) {
+        saveParcelDetails(state, {payload} ) {
             state.name = payload.name;
             state.status = payload.status;
             state.deliveryCost = payload.deliveryCost;
@@ -24,4 +24,4 @@ export const parseDetailsReducer = parcelDetailsSlice.reducer;
 
 export const { saveParcelDetails } = parcelDetailsSlice.actions;
 
-export const selectParcelDetails = (state: RootState) => state.parselDetails
+export const selectParcelDetails = (state: RootState) => state.parcelDetails

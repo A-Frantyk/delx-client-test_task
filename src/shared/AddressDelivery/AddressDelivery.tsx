@@ -1,12 +1,18 @@
 import cls from "./AddressDelivery.module.css"
+
 import { Text } from '../../shared/Text/Text.tsx';
 import { Location } from '../../shared/svg/Location.tsx';
-import { Address } from '../../types/contracts.ts';
 
-export const AddressDelivery = ({city, street}: Address) => {
+interface Address {
+    city: string
+    street: string
+    isNotLast: boolean
+}
+
+export const AddressDelivery = ({city, street, isNotLast}: Address) => {
     return (
         <div className={cls.container}>
-            <div className={cls.dot}/>
+            <div className={isNotLast ? cls.line : cls.dot}/>
             <div className={cls.container_address}>
                 <div className={cls.container_text}>
                     <Text text={city} addStyle={cls.city}/>

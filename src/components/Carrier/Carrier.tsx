@@ -2,6 +2,7 @@ import cls from './Carrier.module.css';
 import { Wheel } from '../../shared/svg/Wheel.tsx';
 import { Text } from '../../shared/Text/Text.tsx';
 import { Phone } from '../../shared/svg/Phone.tsx';
+
 import { useGetCarrierQuery } from '../../store/services/parcelService.ts';
 
 export const Carrier = () => {

@@ -1,10 +1,11 @@
 import cls from "./Address.module.css"
 import { AddressDelivery } from '../../shared/AddressDelivery/AddressDelivery.tsx';
 import { Address as AddressType } from '../../types/contracts';
-import { useGetAddressQuery } from '../../store/services/parcelService.ts';
 import { DateDelivery } from '../DateDelivery/DateDelivery.tsx';
 
-export const Address = () => {
+import { useGetAddressQuery } from '../../store/services/parcelService.ts';
+
+export const Address= ()=> {
     const {data: address, isLoading: isLoadingAddress} = useGetAddressQuery({})
 
     if (isLoadingAddress) return <div>Loading...</div>
@@ -14,9 +15,10 @@ export const Address = () => {
             <div className={cls.container}>
                 <ul className={cls.list}>
                     {address.map(({city, street}: AddressType, index: number) => {
+                        const isNotLast = index !== address.length - 1;
                         return (
                             <li key={`${street}-${index}`}>
-                                <AddressDelivery city={city} street={street}/>
+                                <AddressDelivery city={city} street={street} isNotLast={isNotLast}/>
                             </li>
                         )
                     })}
