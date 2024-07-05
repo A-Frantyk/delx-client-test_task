@@ -10,9 +10,7 @@ import { useGetParcelDetailsQuery } from '../../store/services/parcelService';
 export const ParcelDetails = () => {
     const {data: parcelDetails, isLoading: isLoadingParcelDetails} = useGetParcelDetailsQuery({})
 
-    if(isLoadingParcelDetails){
-        return <div>Loading...</div>
-    }
+    if(isLoadingParcelDetails) return <div>Loading...</div>
 
     return(
         <section className={cls.container}>

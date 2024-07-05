@@ -7,9 +7,7 @@ import { DateDelivery } from '../DateDelivery/DateDelivery.tsx';
 export const Address = () => {
     const {data: address, isLoading: isLoadingAddress} = useGetAddressQuery({})
 
-    if(isLoadingAddress){
-        return <div>Loading...</div>
-    }
+    if (isLoadingAddress) return <div>Loading...</div>
 
     return (
         <section className={cls.section}>

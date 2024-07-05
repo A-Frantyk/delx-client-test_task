@@ -18,11 +18,16 @@ export const parcelApi = createApi({
                 `/address`,
             providesTags: ['Parcel'],
         }),
-
+        getCarrier: builder.query({
+            query: ():string =>
+                `/carrier`,
+            providesTags: ['Parcel'],
+        }),
     })
 })
 
 export const {
     useGetParcelDetailsQuery,
-    useGetAddressQuery
+    useGetAddressQuery,
+    useGetCarrierQuery
 } = parcelApi
