@@ -1,9 +1,9 @@
+import DeliveryPage from "./page/DeliveryPage.tsx";
+
 function App() {
   return (
     <div>
-      <header>
-        <p>jkkhgfdsrre</p>
-      </header>
+      <DeliveryPage />
     </div>
   );
 }
