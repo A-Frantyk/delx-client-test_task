@@ -1,0 +1,23 @@
+{
+  "details": {
+    "name": "Electronic products",
+    "status": "In Transit",
+    "deliveryCost": 200
+  },
+  "deliveryAddress": {
+    "shippingAddress": {
+      "city": "Kyiv",
+      "street": "Yakonenko st.35"
+    },
+    "shippingDate": "2024-03-12T08:00:00.000Z",
+    "deliveryAddress": {
+      "city": "Dnipro",
+      "street": "Glinku st.112"
+    },
+    "deliveryDate": "2024-03-13T16:00:00.000Z"
+  },
+  "carrier": {
+    "name": "Alexander Ponomarenko",
+    "phoneNumber": "+38 (095) 324 3467"
+  }
+}

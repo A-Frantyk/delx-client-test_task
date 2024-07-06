@@ -1,0 +1,88 @@
+.wrapper {
+  border-radius: 1rem;
+  background-color: var(--white-cl);
+  box-shadow: var(--shadow);
+}
+
+.addressList {
+  position: relative;
+  padding: 1rem;
+
+  border-bottom: 1px var(--stroke-cl) solid;
+
+  li {
+    padding-left: 2rem;
+  }
+
+  li:first-child {
+    margin-bottom: 1rem;
+  }
+}
+
+.addressItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    left: 1.5rem;
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+    background-color: var(--primary-cl);
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 50%;
+    left: 1.5rem;
+
+    background-color: var(--primary-cl);
+  }
+
+  &:first-child::after {
+    transform: translate(-50%, 50%);
+  }
+
+  &:last-child::after {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+}
+
+.city {
+  font-weight: 700;
+}
+
+.street {
+  color: var(--secondary-text-cl);
+}
+
+.dateWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.date {
+  font-weight: 600;
+}
+
+.locationIcon {
+  color: var(--primary-cl);
+}
+
+.arrow {
+  color: var(--secondary-text-cl);
+}
