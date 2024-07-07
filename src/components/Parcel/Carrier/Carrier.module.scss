@@ -1,0 +1,44 @@
+.carrier {
+  display: flex;
+  padding: 1rem;
+
+  border-radius: 1rem;
+  background-color: var(--white-cl);
+  box-shadow: var(--shadow);
+}
+
+.iconWrapper {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+
+  &_wheelIcon {
+    margin-right: 1rem;
+
+    color: var(--primary-cl);
+    border-radius: 8px;
+    background-color: var(--secondary-cl);
+  }
+
+  &_phoneIcon {
+    margin-left: auto;
+
+    color: var(--white-cl);
+    border-radius: 50%;
+    background-color: var(--primary-cl);
+  }
+}
+
+.driverName {
+  font-weight: 700;
+}
+
+.driverPhone {
+  color: var(--secondary-text-cl);
+
+  & > span {
+    white-space: nowrap;
+  }
+}
