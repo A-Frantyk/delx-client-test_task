@@ -11,8 +11,16 @@ export type Address = {
 
 export type ParcelDeliveryAddress = {
   shippingAddress: Address;
-  shippingDate: string;
+  shippingDate: Date;
   deliveryAddress: Address;
+  deliveryDate: Date;
+};
+
+export type ParcelDeliveryAddressInput = Pick<
+  ParcelDeliveryAddress,
+  "deliveryAddress" | "shippingAddress"
+> & {
+  shippingDate: string;
   deliveryDate: string;
 };
 
@@ -25,4 +33,8 @@ export type Parcel = {
   details: ParcelDetails;
   deliveryAddress: ParcelDeliveryAddress;
   carrier: Carrier;
+};
+
+export type ParcelInput = Pick<Parcel, "details" | "carrier"> & {
+  deliveryAddress: ParcelDeliveryAddressInput;
 };

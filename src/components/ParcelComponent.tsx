@@ -2,27 +2,36 @@ import "./ParcelStyles.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchParcel } from "../redux/parcelsThunks";
-import { RootState } from "../redux/store";
-import { unwrapResult } from "@reduxjs/toolkit";
+import { AppDispatch, RootState } from "../redux/store";
+import { ParcelInput } from "../contracts";
+import { getFormattedDateTime } from "../helpers/dateFunc";
 const parcelIcon = require("../assets/icons/parcel_filled.svg").default;
 const hrnIcon = require("../assets/icons/hgryvnia.svg").default;
+
+function convertType(input: ParcelInput | null) {
+  if (!input) return null;
+  const deliveryDate = new Date(input.deliveryAddress.deliveryDate);
+  const shippingDate = new Date(input.deliveryAddress.shippingDate);
+  return {
+    ...input,
+    deliveryAddress: {
+      ...input.deliveryAddress,
+      deliveryDate,
+      shippingDate,
+    },
+  };
+}
+
 const ParcelComponent: React.FC = () => {
-  const dispatch = useDispatch();
-  const parcel = useSelector((state: RootState) => state.parcels.data);
+  const dispatch: AppDispatch = useDispatch();
+  const parcel = useSelector((state: RootState) =>
+    convertType(state.parcels.data),
+  );
   const loading = useSelector((state: RootState) => state.parcels.loading);
   const error = useSelector((state: RootState) => state.parcels.error);
 
   useEffect(() => {
-    const fetchParcelData = async () => {
-      try {
-        const actionResult = await dispatch(fetchParcel() as any);
-        const resultAction = unwrapResult(actionResult);
-      } catch (err) {
-        console.error("Failed to fetch parcel data:", err);
-      }
-    };
-
-    fetchParcelData();
+    dispatch(fetchParcel());
   }, []);
 
   if (loading) return <p>Loading...</p>;
@@ -42,20 +51,20 @@ const ParcelComponent: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* <p>{parcel.deliveryAddress.shippingDate}</p>
-      <p>{parcel.deliveryAddress.deliveryDate}</p>
+      <p>{getFormattedDateTime(parcel.deliveryAddress.shippingDate)}</p>
+      <p>{getFormattedDateTime(parcel.deliveryAddress.deliveryDate)}</p>
       <h3>Delivery Address</h3>
       <p>
-        Shipping Address: {parcel.deliveryAddress.shippingAddress.street},{" "}
+        Shipping Address: {parcel.deliveryAddress.shippingAddress.street},
         {parcel.deliveryAddress.shippingAddress.city}
       </p>
       <p>
-        Delivery Address: {parcel.deliveryAddress.deliveryAddress.street},{" "}
+        Delivery Address: {parcel.deliveryAddress.deliveryAddress.street},
         {parcel.deliveryAddress.deliveryAddress.city}
       </p>
       <h3>Carrier</h3>
       <p>Name: {parcel.carrier.name}</p>
-      <p>Phone Number: {parcel.carrier.phoneNumber}</p> */}
+      <p>Phone Number: {parcel.carrier.phoneNumber}</p>
     </div>
   );
 };

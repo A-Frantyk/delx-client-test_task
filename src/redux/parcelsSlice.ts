@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Parcel } from "../contracts";
+import { ParcelInput } from "../contracts";
 import { fetchParcel } from "./parcelsThunks";
 
 interface ParcelsState {
-  data: Parcel | null;
+  data: ParcelInput | null;
   loading: boolean;
   error: string | null;
 }

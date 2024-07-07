@@ -1,10 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import parcelsReducer from "../redux/parcelsSlice";
+const rootReducer = combineReducers({ parcels: parcelsReducer });
 
 const store = configureStore({
-  reducer: {
-    parcels: parcelsReducer,
-  },
+  reducer: rootReducer,
 });
 
 export type RootState = ReturnType<typeof store.getState>;
