@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+#root {
+  @media #{$media-phone} {
+    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @media #{$media-tablet} {
+    padding: 0 30px;
+  }
+
+  @media #{$media-desktop} {
+    padding: 0 100px;
+    width: 1280px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: $font-family;
+  @include apply-text-style("body");
+  color: $primary-text-color;
+  background-color: $background;
+  scroll-behavior: smoothing;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
