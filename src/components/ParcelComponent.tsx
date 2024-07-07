@@ -1,9 +1,11 @@
+import "./ParcelStyles.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchParcel } from "../redux/parcelsThunks";
 import { RootState } from "../redux/store";
 import { unwrapResult } from "@reduxjs/toolkit";
-
+const parcelIcon = require("../assets/icons/parcel_filled.svg").default;
+const hrnIcon = require("../assets/icons/hgryvnia.svg").default;
 const ParcelComponent: React.FC = () => {
   const dispatch = useDispatch();
   const parcel = useSelector((state: RootState) => state.parcels.data);
@@ -21,7 +23,7 @@ const ParcelComponent: React.FC = () => {
     };
 
     fetchParcelData();
-  }, [dispatch]);
+  }, []);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
@@ -29,10 +31,19 @@ const ParcelComponent: React.FC = () => {
 
   return (
     <div>
-      <h2>Parcel Details</h2>
-      <p>Name: {parcel.details.name}</p>
-      <p>Status: {parcel.details.status}</p>
-      <p>Delivery Cost: ₴{parcel.details.deliveryCost}</p>
+      <div className="parcelTitleWrap">
+        <img className="parcellImg" src={parcelIcon} alt="parcel" />
+        <div>
+          <h1 className="parcel-title">{parcel.details.name}</h1>
+          <div className="infoWrap">
+            <p className="status">{parcel.details.status}</p>
+            <img src={hrnIcon} alt="hrn" width={18} />
+            <p className="price">{parcel.details.deliveryCost}</p>
+          </div>
+        </div>
+      </div>
+      {/* <p>{parcel.deliveryAddress.shippingDate}</p>
+      <p>{parcel.deliveryAddress.deliveryDate}</p>
       <h3>Delivery Address</h3>
       <p>
         Shipping Address: {parcel.deliveryAddress.shippingAddress.street},{" "}
@@ -44,7 +55,7 @@ const ParcelComponent: React.FC = () => {
       </p>
       <h3>Carrier</h3>
       <p>Name: {parcel.carrier.name}</p>
-      <p>Phone Number: {parcel.carrier.phoneNumber}</p>
+      <p>Phone Number: {parcel.carrier.phoneNumber}</p> */}
     </div>
   );
 };

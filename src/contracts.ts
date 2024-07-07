@@ -1,28 +1,28 @@
 export type ParcelDetails = {
-    name: string;
-    status: string;
-    deliveryCost: number;
-}
+  name: string;
+  status: string;
+  deliveryCost: number;
+};
 
 export type Address = {
-    city: string;
-    street: string;
-}
+  city: string;
+  street: string;
+};
 
 export type ParcelDeliveryAddress = {
-    shippingAddress: Address;
-    shippingDate: Date;
-    deliveryAddress: Address;
-    deliveryDate: Date;
-}
+  shippingAddress: Address;
+  shippingDate: string;
+  deliveryAddress: Address;
+  deliveryDate: string;
+};
 
 export type Carrier = {
-    name: string;
-    phoneNumber: string;
-}
+  name: string;
+  phoneNumber: string;
+};
 
 export type Parcel = {
-    details: ParcelDetails;
-    deliveryAddress: ParcelDeliveryAddress;
-    carrier: Carrier;
-}
+  details: ParcelDetails;
+  deliveryAddress: ParcelDeliveryAddress;
+  carrier: Carrier;
+};

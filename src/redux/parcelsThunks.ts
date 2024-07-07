@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { Parcel } from "../contracts";
-
-const shippingDate = new Date("2024-03-12T10:00:00Z");
-const deliveryDate = new Date("2024-03-13T18:00:00Z");
+import { getFormattedDateTime } from "../helpers/dateFunc";
+const shippingDate = new Date("2024-03-12T10:00:00+02:00");
+const deliveryDate = new Date("2024-03-13T18:00:00+02:00");
 
 const mockParcelData: Parcel = {
   details: {
@@ -15,12 +15,12 @@ const mockParcelData: Parcel = {
       city: "Kyiv",
       street: "Yakonenko st. 35",
     },
-    shippingDate: shippingDate,
+    shippingDate: getFormattedDateTime(shippingDate),
     deliveryAddress: {
       city: "Dnipro",
       street: "Glinki st. 112",
     },
-    deliveryDate: deliveryDate,
+    deliveryDate: getFormattedDateTime(deliveryDate),
   },
   carrier: {
     name: "Alexander Ponomarenko",

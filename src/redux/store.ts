@@ -5,17 +5,6 @@ const store = configureStore({
   reducer: {
     parcels: parcelsReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActionPaths: [
-          "meta.arg",
-          "payload.deliveryAddress.shippingDate",
-          "payload.deliveryAddress.deliveryDate",
-        ],
-        ignoredPaths: ["items.dates"],
-      },
-    }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
