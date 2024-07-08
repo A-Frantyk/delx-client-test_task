@@ -7,12 +7,21 @@ const phone = require("../../assets/icons/phone.svg").default;
 const ParcelCarrier: React.FC<{ parcel: Parcel }> = ({ parcel }) => {
   return (
     <div className="carrier-wrap">
-      <img className="wheel-icon " src={wheel} alt="wheel"></img>
+      <a
+        href="https://www.google.com/maps?q=Ukraine, Kuiv
+              "
+      >
+        <img className="wheel-icon " src={wheel} alt="wheel"></img>
+      </a>
       <div>
         <p className="carrier-name">{parcel.carrier.name}</p>
-        <p className="carrier-tel">Driver | {parcel.carrier.phoneNumber}</p>
+        <a className="carrier-tel" href={`tel:${parcel.carrier.phoneNumber}`}>
+          Driver | {parcel.carrier.phoneNumber}
+        </a>
       </div>
-      <img className="tel-img" src={phone} alt="phone" />
+      <a href={`tel:${parcel.carrier.phoneNumber}`}>
+        <img className="tel-img" src={phone} alt="phone" />
+      </a>
     </div>
   );
 };
