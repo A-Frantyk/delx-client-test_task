@@ -1,8 +1,9 @@
 import React from "react";
-const arrowIcon = require("../assets/icons/arrow_right.svg").default;
-const locationIcon = require("../assets/icons/location.svg").default;
-import { getFormattedDateTime } from "../helpers/dateFunc";
-import { Parcel } from "../contracts";
+import { Parcel } from "../../contracts";
+import { getFormattedDateTime } from "../../helpers/dateFunc";
+import "./parcelCenterStyles.css";
+const arrowIcon = require("../../assets/icons/arrow_right.svg").default;
+const locationIcon = require("../../assets/icons/location.svg").default;
 
 const ParcelCenter: React.FC<{ parcel: Parcel }> = ({ parcel }) => {
   return (

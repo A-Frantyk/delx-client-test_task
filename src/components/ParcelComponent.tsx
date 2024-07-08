@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchParcel } from "../redux/parcelsThunks";
 import { AppDispatch, RootState } from "../redux/store";
 import { convertType } from "../helpers/convertType";
-import ParcelTitle from "./ParcelTitle";
-import ParcelCenter from "./ParcelCenter";
-import ParcelCarrier from "./ParcelCarrier";
+import ParcelTitle from "./ParcelTitle/ParcelTitle";
+import ParcelCenter from "./ParcelCenter/ParcelCenter";
+import ParcelCarrier from "./ParcelCarrier/ParcelCarrier";
 import Loader from "./Loader";
 
 const ParcelComponent: React.FC = () => {

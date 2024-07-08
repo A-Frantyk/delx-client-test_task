@@ -1,0 +1,51 @@
+.center-wrap {
+  padding: 16px;
+  border-radius: 16px;
+  background-color: var(--white);
+  box-shadow: 1px 1px 8px -2px var(--secondary-text-color);
+  margin-bottom: 20px;
+}
+
+.adress-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adress-wrap:first-child {
+  margin-bottom: 14px;
+}
+
+.adress-city {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.adress-street {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--secondary-text-color);
+}
+
+.date-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.date-wrap::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: -16px;
+  width: 335px;
+  height: 1px;
+  background-color: var(--stroke);
+}
+
+.date-time {
+  font-size: 14px;
+  font-weight: 600;
+}
