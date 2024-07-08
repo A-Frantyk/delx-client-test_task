@@ -1,0 +1,67 @@
+$primary-text-color: #101828;
+$secondary-text-color: #989898;
+$stroke: #e7e7e6;
+$background: #fafafa;
+$white: #ffffff;
+$primary: #6377e2;
+$secondary: #e7ecfa;
+$blue-label: #6377e2;
+$green-success: #5bad77;
+$yellow-warning: #e9bc7e;
+$red-error: #e97e80;
+
+$font-family: "Urbanist", sans-serif;
+
+$text-xs: 14px;
+$text-sm: 16px;
+$text-md: 18px;
+$text-xl: 24px;
+$text-2xl: 32px;
+
+$normal: 400;
+$semi-bold: 600;
+$bold: 700;
+
+$line-height-xs: 1;
+$line-height-sm: 1.25;
+$line-height-md: 1.33;
+$line-height-xl: 1.42;
+
+$media-mini: "(max-width: 380px)";
+$media-phone: "(max-width: 580px)";
+$media-tablet: "(max-width: 768px)";
+$media-desktop: "(min-width: 1280px)";
+
+$box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+$radius-xs: 8px;
+$radius-sm: 12px;
+$radius-md: 16px;
+$radius-xl: 24px;
+$radius-circle: 50%;
+
+$transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+$text-styles: (
+  "title": (
+    "font-size": $text-2xl,
+    "line-height": $line-height-md,
+    "font-weight": $bold,
+  ),
+  "subtitle": (
+    "font-size": $text-xl,
+    "line-height": $line-height-xl,
+    "font-weight": $bold,
+  ),
+  "body": (
+    "font-size": $text-sm,
+    "line-height": $line-height-xs,
+    "font-weight": $normal,
+  ),
+);
+
+@mixin apply-text-style($style-name) {
+  @each $property, $value in map-get($text-styles, $style-name) {
+    #{$property}: #{$value};
+  }
+}
