@@ -40,8 +40,17 @@
   color: var(--white);
 }
 
+.price-wrap {
+  display: flex;
+  align-items: center;
+}
+
 .price {
   font-size: 18px;
   font-weight: 600;
   color: var(--secondary-text-color);
+}
+
+.price-icon {
+  width: 18px;
 }
