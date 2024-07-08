@@ -6,11 +6,15 @@
   box-shadow: 1px 1px 8px -2px var(--secondary-text-color);
 }
 
-.wheel-icon {
+.wheel-link {
   padding: 8px;
   border-radius: 8px;
   background-color: var(--secondary);
-  color: var(--primary);
+  transition: background-color 0.3s linear;
+
+  &:hover {
+    background-color: var(--stroke);
+  }
 }
 
 .carrier-wrap {
@@ -30,10 +34,20 @@
   font-size: 14px;
   font-weight: 500;
   color: var(--secondary-text-color);
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: var(--stroke);
+  }
 }
 
-.tel-img {
+.tel-link {
   padding: 8px;
   border-radius: 50%;
   background-color: var(--primary);
+  transition: background-color 0.3s linear;
+
+  &:hover {
+    background-color: var(--stroke);
+  }
 }
