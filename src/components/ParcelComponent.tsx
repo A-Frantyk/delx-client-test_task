@@ -1,4 +1,4 @@
-import "./ParcelStyles.css";
+import "./parcelStyles.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchParcel } from "../redux/parcelsThunks";
@@ -82,7 +82,7 @@ const ParcelComponent: React.FC = () => {
           <p className="carrier-name">{parcel.carrier.name}</p>
           <p className="carrier-tel">Driver | {parcel.carrier.phoneNumber}</p>
         </div>
-        <img src={phone} alt="phone" />
+        <img className="tel-img" src={phone} alt="phone" />
       </div>
     </div>
   );
