@@ -1,8 +1,9 @@
 import React from "react";
+import { Parcel } from "../contracts";
 const wheel = require("../assets/icons/wheel.svg").default;
 const phone = require("../assets/icons/phone.svg").default;
 
-const ParcelCarrier: React.FC<{ parcel: any }> = ({ parcel }) => {
+const ParcelCarrier: React.FC<{ parcel: Parcel }> = ({ parcel }) => {
   return (
     <div className="carrier-wrap">
       <img className="wheel-icon " src={wheel} alt="wheel"></img>

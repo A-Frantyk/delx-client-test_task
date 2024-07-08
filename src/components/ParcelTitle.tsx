@@ -1,7 +1,8 @@
 import React from "react";
+import { Parcel } from "../contracts";
 const parcelIcon = require("../assets/icons/parcel_filled.svg").default;
 
-const ParcelTitle: React.FC<{ parcel: any }> = ({ parcel }) => {
+const ParcelTitle: React.FC<{ parcel: Parcel }> = ({ parcel }) => {
   return (
     <div className="parcelTitleWrap">
       <img className="parcel-img" src={parcelIcon} alt="parcel" />
