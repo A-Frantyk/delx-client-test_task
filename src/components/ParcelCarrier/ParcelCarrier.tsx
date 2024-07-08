@@ -15,7 +15,7 @@ const ParcelCarrier: React.FC<{ parcel: Parcel }> = ({ parcel }) => {
       </a>
       <div>
         <p className="carrier-name">{parcel.carrier.name}</p>
-        <a className="carrier-tel" href={`tel:${parcel.carrier.phoneNumber}`}>
+        <a className="carrier-tel" href={`tel:+38(095)324 3467`}>
           Driver | {parcel.carrier.phoneNumber}
         </a>
       </div>
