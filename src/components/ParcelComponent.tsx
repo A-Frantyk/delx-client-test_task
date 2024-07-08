@@ -7,6 +7,7 @@ import { convertType } from "../helpers/convertType";
 import ParcelTitle from "./ParcelTitle";
 import ParcelCenter from "./ParcelCenter";
 import ParcelCarrier from "./ParcelCarrier";
+import Loader from "./Loader";
 
 const ParcelComponent: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -20,7 +21,7 @@ const ParcelComponent: React.FC = () => {
     dispatch(fetchParcel());
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
   if (!parcel) return null;
 
